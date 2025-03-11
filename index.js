@@ -520,8 +520,8 @@ app.delete("/Order_detail/:id", (req, res) => {
         res.status(500).send(err);
       });
 });
-//---------------------------connect Front---------------------------------
 
+//---------------------------connect Front---------------------------------
 // Register
 app.get("/register", (req, res) => {
   Customer.findAll() //select * from
@@ -585,7 +585,6 @@ app.post("/login", async (req, res) => {
   }
 });
 
-
 //menu_customer
 app.get("/menu_customer", async (req, res) => {
   try {
@@ -636,7 +635,7 @@ app.post("/add_menu", async (req, res) => {
   }
 });
 
-//jointable_orderdetails
+//join table_orderdetails
 app.get("/jointable_orderdetails", async (req, res) => {
   try {
     Order_Detail.belongsTo(Customer, { foreignKey: 'customer_id' });
